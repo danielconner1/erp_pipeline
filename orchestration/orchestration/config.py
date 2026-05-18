@@ -1,0 +1,9 @@
+DATE_COLS = ["DATE_YEAR", "DATE_MONTH", "DATE_DAY", "GMT_HOUR", "GMT_MINUTE", "GMT_SEC"]
+S3_BUCKET = 'telemetrypipeline'
+S3_RAW_INCOMING_PATH = 'raw/incoming/'
+S3_RAW_ARCHIVE_PATH = 'raw/archive/'
+S3_PARQUET_PATH = 'parquet/'
+S3_PROCESSED_PATH = 'processed/'
+S3_FEATURES_PATH = 'features/'
+S3_FEATURES_FILE_NAME = 'features/features.parquet'
+S3_REGION = 'us-east-2'

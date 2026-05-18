@@ -1,0 +1,9 @@
+locations:
+  - location_name: ERP-Pipeline
+    image: 585369386233.dkr.ecr.us-east-2.amazonaws.com/erp-pipeline:v1
+    code_source:
+      module_name: orchestration.orchestration
+    container_context:
+      docker:
+        env_vars:
+          - POSTGRES_URL

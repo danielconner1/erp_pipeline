@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+*.pyc
+.dagster
+
+data/raw/csv
+data/raw/parquet
+data/processed/parquet
+data/features
+
+*.parquet
+*.csv

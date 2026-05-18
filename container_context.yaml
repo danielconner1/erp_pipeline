@@ -1,0 +1,6 @@
+
+### Uncomment to add configuration for Docker resources.
+# docker:
+#   env_vars:
+#     - DATABASE_NAME=staging
+#     - DATABASE_PASSWORD
