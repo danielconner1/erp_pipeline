@@ -120,7 +120,4 @@ def ingest_raw_csv_to_parquet():
         }
     )
 
-ingest_raw_csv_to_parquet()
-
-
 
