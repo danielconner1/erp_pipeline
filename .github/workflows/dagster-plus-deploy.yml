@@ -120,7 +120,7 @@ jobs:
       # image for each code location, use multiple "build-push-actions" with a location specific
       # tag.
 
-      - name: Build and upload Docker image for "ERP-pipeline"
+      - name: Build and upload Docker image for "erp-pipeline"
         if: steps.prerun.outputs.result != 'skip'
         uses: docker/build-push-action@v4
         with:
@@ -130,7 +130,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Update build session with image tag for ERP-Pipeline
+      - name: Update build session with image tag for erp-Pipeline
         id: ci-set-build-output-example-location
         if: steps.prerun.outputs.result != 'skip'
         uses: dagster-io/dagster-cloud-action/actions/utils/dg-cli@v1.13.3
