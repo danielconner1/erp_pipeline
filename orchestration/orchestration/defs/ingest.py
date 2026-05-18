@@ -19,8 +19,6 @@ from ..config import (
     S3_PARQUET_PATH,
     S3_BUCKET
 )
-
-
     return MaterializeResult(
         metadata={
             "processed": 0,
