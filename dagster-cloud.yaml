@@ -1,6 +1,6 @@
 locations:
   - location_name: erp_pipeline
-    image: 585369386233.dkr.ecr.us-east-2.amazonaws.com/erp-pipeline:v2
+    image: 585369386233.dkr.ecr.us-east-2.amazonaws.com/erp-pipeline:v3
     code_source:
       module_name: orchestration.orchestration
     container_context:
