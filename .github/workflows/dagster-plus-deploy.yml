@@ -120,7 +120,7 @@ jobs:
       # image for each code location, use multiple "build-push-actions" with a location specific
       # tag.
 
-      - name: Build and upload Docker image for "erp-pipeline"
+      - name: Build and upload Docker image for "erp_pipeline"
         if: steps.prerun.outputs.result != 'skip'
         uses: docker/build-push-action@v4
         with:
