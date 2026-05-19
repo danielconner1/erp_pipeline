@@ -126,7 +126,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: 585369386233.dkr.ecr.us-east-2.amazonaws.com/erp-pipeline:v1
+          tags: 585369386233.dkr.ecr.us-east-2.amazonaws.com/erp-pipeline:v2
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -135,7 +135,7 @@ jobs:
         if: steps.prerun.outputs.result != 'skip'
         uses: dagster-io/dagster-cloud-action/actions/utils/dg-cli@v1.13.3
         with:
-          command: "plus deploy set-build-output --target-path=${{ env.DAGSTER_PROJECT_DIR }} --location-name=erp_pipeline --image-tag=v1"
+          command: "plus deploy set-build-output --target-path=${{ env.DAGSTER_PROJECT_DIR }} --location-name=erp_pipeline --image-tag=v2"
 
 
       # Deploy all code locations in this build session to Dagster Cloud
