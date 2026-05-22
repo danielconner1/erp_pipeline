@@ -1,5 +1,5 @@
 from dagster import define_asset_job, ScheduleDefinition, Definitions
-from ingest import ingest_raw_employee_csv
+from .ingest import ingest_raw_employee_csv
 
 erp_job = define_asset_job(
     name="erp_job",
