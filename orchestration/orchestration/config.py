@@ -11,7 +11,3 @@ TABLE_MAP = {"employee.csv": {
                                         "core":"core_employee"
                                      }
 }
-
-test_table = staging_table_map["employfdsfee.csv"]["staging"]
-
-print(test_table)
