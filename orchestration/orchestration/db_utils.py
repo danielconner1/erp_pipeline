@@ -13,14 +13,24 @@ def get_pipeline_runs_count( db_url:str):
     engine = create_engine(db_url)
     count = engine.connect().execute(text("""
         SELECT COUNT(*)
-        FROM telemetry.pipeline_runs
+        FROM erp.pipeline_runs
     """)).scalar()
+
+    return count
+
+def get_table_count( db_url:str, schema:str, table_name:str):
+    engine = create_engine(db_url)
+    count_query = text(f"SELECT COUNT(*) FROM {schema}.{table_name}")
+
+    with engine.connect() as conn:
+        count = conn.execute(count_query).scalar()
 
     return count
 
 def insert_into_pipeline_runs_table(started: datetime, completed_at: datetime,
                                     files_processed: int, files_skipped: int,
-                                    files_failed: int, stage: str, conn_str:str):
+                                    files_failed: int, stage: str, conn_str:str,
+                                    schema:str):
     log_df = pd.DataFrame([{
         "stage": stage,
         "status": "processed",
@@ -32,7 +42,5 @@ def insert_into_pipeline_runs_table(started: datetime, completed_at: datetime,
     }])
 
     insert_into_table_from_df(log_df, "pipeline_runs",
-                              "telemetry", conn_str, 'append')
-
-
+                              schema, conn_str, 'append')
 

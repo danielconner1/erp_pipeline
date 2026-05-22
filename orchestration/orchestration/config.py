@@ -1,9 +1,17 @@
-DATE_COLS = ["DATE_YEAR", "DATE_MONTH", "DATE_DAY", "GMT_HOUR", "GMT_MINUTE", "GMT_SEC"]
-S3_BUCKET = 'telemetrypipeline'
-S3_RAW_INCOMING_PATH = 'raw/incoming/'
-S3_RAW_ARCHIVE_PATH = 'raw/archive/'
-S3_PARQUET_PATH = 'parquet/'
-S3_PROCESSED_PATH = 'processed/'
-S3_FEATURES_PATH = 'features/'
-S3_FEATURES_FILE_NAME = 'features/features.parquet'
+S3_BUCKET = 'erppipeline'
+DATE_COLS = ["effective_date", "last_updated_at"]
+S3_RAW_INCOMING_PATH = 'bronze/incoming'
+S3_RAW_ARCHIVE_PATH = 'bronze/archive/'
+S3_PROCESSED_PATH = 'silver/'
+S3_OUTPUT_PATH = 'gold/'
 S3_REGION = 'us-east-2'
+
+TABLE_MAP = {"employee.csv": {
+                                        "staging":"stg_employee",
+                                        "core":"core_employee"
+                                     }
+}
+
+test_table = staging_table_map["employfdsfee.csv"]["staging"]
+
+print(test_table)
