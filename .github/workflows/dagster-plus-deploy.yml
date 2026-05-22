@@ -126,7 +126,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: 585369386233.dkr.ecr.us-east-2.amazonaws.com/erp-pipeline:v4
+          tags: 585369386233.dkr.ecr.us-east-2.amazonaws.com/erp-pipeline:v5
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
