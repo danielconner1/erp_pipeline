@@ -78,8 +78,10 @@ def ingest_raw_employee_csv():
 
         try:
             table_name = TABLE_MAP[file_name]["staging"]
-            loading_stg_table(S3_BUCKET, key, table_name,
+            rows_updated = loading_stg_table(S3_BUCKET, key, table_name,
                               conn_str, schema='erp')
+
+            print("Staging rows updated:", rows_updated)
         except KeyError as ke:
             print(f"File {file_name} not mapped to staging table, skipping")
             skipped += 1
@@ -127,5 +129,3 @@ def ingest_raw_employee_csv():
             "failed": failed
         }
     )
-
-
